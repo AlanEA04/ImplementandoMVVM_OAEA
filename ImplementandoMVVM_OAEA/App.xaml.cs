@@ -1,4 +1,5 @@
 ﻿using ImplementandoMVVM_OAEA.Vista;
+using ImplementandoMVVM_OAEA.Vista.Pokemon;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,7 @@ namespace ImplementandoMVVM_OAEA
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Pagina1());
+            MainPage = new NavigationPage(new ListaPokemon());
 
             
         }

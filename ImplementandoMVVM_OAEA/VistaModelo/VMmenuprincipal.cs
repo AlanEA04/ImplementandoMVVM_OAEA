@@ -15,12 +15,12 @@ namespace ImplementandoMVVM_OAEA.VistaModelo
         #region VARIABLES
         string _Texto;
 
-        public List<MenuPrincipal> listausuarios { get; set; }
+        public List<MenuPrincipal> listapaginas { get; set; }
 
 
-        public void Mostrausruario()
+        public void MostrarPaginas()
         {
-            listausuarios = new List<MenuPrincipal>
+            listapaginas = new List<MenuPrincipal>
             {
                 new MenuPrincipal
                 {
@@ -46,7 +46,7 @@ namespace ImplementandoMVVM_OAEA.VistaModelo
         public VMmenuprincipal(INavigation navigation)
         {
             Navigation = navigation;
-            Mostrausruario();
+            MostrarPaginas();
         }
 
         #endregion
@@ -73,18 +73,17 @@ namespace ImplementandoMVVM_OAEA.VistaModelo
         {
             string pagina;
             pagina = parametros.Pagina;
-            if (pagina.Contains("Entry, datepicker")) 
+            if (pagina.Contains("Entry, datepicker"))
             {
                 await Navigation.PushAsync(new Pagina1());
             }
-            if (pagina.Contains("CollectionView sin enlace")) 
+            if (pagina.Contains("CollectionView sin enlace"))
             {
                 await Navigation.PushAsync(new Page2());
             }
             if (pagina.Contains("Crud pokemon"))
             {
                 await Navigation.PushAsync(new CrudPokemon());
-
             }
 
         }

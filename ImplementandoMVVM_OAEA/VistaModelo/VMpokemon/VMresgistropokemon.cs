@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace ImplementandoMVVM_OAEA.VistaModelo
+namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
 {
-    internal class VMPokemonCrud : BaseViewModel
+    internal class VMresgistropokemon : BaseViewModel
     {
 
         #region VARIABLES
         string _Texto;
         #endregion
         #region CONTRUCTOR
-        public VMPokemonCrud(INavigation navigation)
+        public VMresgistropokemon(INavigation navigation)
         {
             Navigation = navigation;
         }

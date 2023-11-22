@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace ImplementandoMVVM_OAEA.VistaModelo
 {
-    internal class VMpatron : BaseViewModel
+    public class VMpatron : BaseViewModel
     {
         #region VARIABLES
         string _Texto;

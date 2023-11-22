@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImplementandoMVVM_OAEA.Vista.Pokemon.Registarpokemon">
+    <Grid RowDefinitions="80,*"
+          BackgroundColor="#1d1d1d"
+         >
+
+        <StackLayout Orientation="Horizontal" >
+            <StackLayout Orientation="Horizontal" Padding="15">
+                
+               <Image Source="OtraFlecha.png" WidthRequest="48"/>
+                <Image Source="https://i.ibb.co/KK9z45Y/Pokemon.jpg" 
+                       HorizontalOptions="CenterAndExpand"/>
+
+                <Image Source="https://i.ibb.co/Z2v9Gk0/pokebola.png "/>
+
+            </StackLayout>
+        </StackLayout>
+        
+        
+        
+        
+        
+    </Grid>
+</ContentPage>

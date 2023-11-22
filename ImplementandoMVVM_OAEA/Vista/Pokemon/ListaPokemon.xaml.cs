@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ImplementandoMVVM_OAEA.Vista
+namespace ImplementandoMVVM_OAEA.Vista.Pokemon
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CrudPokemon : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ListaPokemon : ContentPage
     {
-        public CrudPokemon()
+        public ListaPokemon()
         {
             InitializeComponent();
         }

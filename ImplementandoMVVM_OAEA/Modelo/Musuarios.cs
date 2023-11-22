@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ImplementandoMVVM_OAEA.VistaModelo
+namespace ImplementandoMVVM_OAEA.Modelo
 {
     public class Musuarios
     {
