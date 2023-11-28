@@ -20,6 +20,17 @@
             
         </CollectionView>
 
+        <Button Text="+"
+         Grid.Row="1"
+         HeightRequest="100"
+         WidthRequest="100"
+         VerticalOptions="End"
+         CornerRadius="50"
+         Margin="15"
+         FontSize="50"
+         FontAttributes="Bold"
+         BackgroundColor="#FFD755"
+         Command="{Binding Iraregistrocommand}"/>
 
 
 

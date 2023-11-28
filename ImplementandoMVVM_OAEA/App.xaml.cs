@@ -12,7 +12,7 @@ namespace ImplementandoMVVM_OAEA
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Registarpokemon());
+            MainPage = new NavigationPage(new ListaPokemon());
 
             
         }

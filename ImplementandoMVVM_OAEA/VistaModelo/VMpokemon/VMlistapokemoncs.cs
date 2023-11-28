@@ -4,6 +4,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using ImplementandoMVVM_OAEA.Vista.Pokemon;
+
 
 namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
 {
@@ -29,19 +31,20 @@ namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
             #endregion
             #region PROCESOS
 
-            public async Task ProcesoAsyncrono()
+            public async Task Iraregistro()
             {
+            await Navigation.PushAsync(new Registarpokemon());
 
             }
 
-            public void ProcesoSimple()
+        public void ProcesoSimple()
             {
 
 
             }
             #endregion
             #region COMANDOS
-            public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrono());
+            public ICommand Iraregistrocommand => new Command(async () => await Iraregistro());
 
             public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
             #endregion

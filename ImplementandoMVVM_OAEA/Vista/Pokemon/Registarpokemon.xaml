@@ -6,7 +6,10 @@
     <Grid RowDefinitions="80,*"
           BackgroundColor="#1D1D1D">
         <StackLayout Orientation="Horizontal" Margin="15">
-            <Image Source="OtraFlecha.png" WidthRequest="40"/>
+            <Image Source="OtraFlecha.png" WidthRequest="48"/>
+
+            <Image.GestureRecognizers Command="{Binding Volvercomand}"/>
+
             <Image Source="https://i.ibb.co/KK9z45Y/Pokemon.jpg"
                    HorizontalOptions="CenterAndExpand"/>
             <Image Source="https://i.ibb.co/Z2v9Gk0/pokebola.png "/>
@@ -98,7 +101,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center">
-                <Image Source="https://i.ibb.co/mNXrddT/Charizard.png"
+                <Image Source="https://i.ibb.co/X8F5c2J/ojo.png"
                        HeightRequest="20"/>
                 <Label Text="Vista previa"
                        FontSize="20"
@@ -107,7 +110,7 @@
                        VerticalOptions="Center"/>
             </StackLayout>
             <Grid RowDefinitions="100,*"
-                  Margin="0,10,0,0">
+                  Margin="0,20,0,0">
                 <Frame Grid.Row="1" WidthRequest="250"
                        HorizontalOptions="Center"
                        CornerRadius="15"
@@ -125,10 +128,10 @@
                                 HorizontalOptions="Start"
                                 TextTransform="None"
                                 HeightRequest="40"
-                                BackgroundColor="{Binding Txtcolorpode }"/>
+                                BackgroundColor="{Binding Txtcolorpoder }"/>
                     </StackLayout>
                 </Frame>
-                <Image Source="https://i.ibb.co/mNXrddT/Charizard.png"/>
+               
                 <Image Source="{Binding Txticono}"
                        Grid.RowSpan="2"
                        HeightRequest="160"

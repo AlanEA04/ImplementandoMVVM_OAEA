@@ -4,6 +4,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using ImplementandoMVVM_OAEA.Modelo;
+using ImplementandoMVVM_OAEA.Datos;
 
 namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
 {
@@ -63,9 +65,17 @@ namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
 
         #endregion
         #region PROCESOS
-        public async Task ProcesoAsyncrono()
-        {
 
+        public async Task Insertar()
+        {
+            var funcion = new Dpokemon();
+            var parametros = new Mpokemon();
+            parametros.ColorFondo= _Txtcolorfondo;
+            parametros.Colorpoder= _Txtcolorpoder;
+        }
+        public async Task Volver()
+        {
+            await Navigation.PopAsync();
         }
         public void ProcesoSimple()
         {
@@ -73,7 +83,7 @@ namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
         }
         #endregion
         #region COMANDOS
-        public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrono());
+        public ICommand Volvercomand => new Command(async () => await Volver());
         public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
         #endregion
     }
