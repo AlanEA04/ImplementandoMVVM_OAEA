@@ -6,6 +6,8 @@ using ImplementandoMVVM_OAEA.Conexion;
 using Firebase.Database.Query;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Collections.ObjectModel;
+using Firebase.Database;
 
 namespace ImplementandoMVVM_OAEA.Datos
 {
@@ -17,8 +19,8 @@ namespace ImplementandoMVVM_OAEA.Datos
                   .Child("Pokemon")
                   .PostAsync(new Mpokemon()
                   {
-                      ColorFondo= parametros.ColorFondo,
-                      Colorpoder= parametros.Colorpoder,  
+                      ColorFondo = "#" + parametros.ColorFondo,
+                      Colorpoder= "#"+ parametros.Colorpoder,  
                       Icono= parametros.Icono,
                       Nombre= parametros.Nombre, 
                       NroOrden= parametros.NroOrden,
@@ -26,23 +28,38 @@ namespace ImplementandoMVVM_OAEA.Datos
                   }
                   );
         }
-        public async Task<List<Mpokemon>> MostrarPokemon()
+        public async Task<ObservableCollection<Mpokemon>> MostrarPokemon()
         {
 
-            return(await Conexionn.firebase
-                .Child("Pokemon")
-                .OnceAsync<Mpokemon>())
-                .Select(item => new Mpokemon
-                { 
-                    IdPokemon=item.Key,
-                    Nombre=item.Object.Nombre,
-                    ColorFondo=item.Object.ColorFondo,
-                   Colorpoder=item.Object.Colorpoder,
-                    Icono=item.Object.Icono,
-                    NroOrden=item.Object.NroOrden,
-                    Poder=item.Object.Poder,
+            //return (await Conexionn.firebase
+            //    .Child("Pokemon")
+            //    .OnceAsync<Mpokemon>())
+            //    .Select(item => new Mpokemon
+            //    {
+            //        IdPokemon = item.Key,
+            //        Nombre = item.Object.Nombre,
+            //        ColorFondo = item.Object.ColorFondo,
+            //        Colorpoder = item.Object.Colorpoder,
+            //        Icono = item.Object.Icono,
+            //        NroOrden = item.Object.NroOrden,
+            //        Poder = item.Object.Poder,
 
-                }).ToList();
+            //    }).ToList();
+
+
+
+             var data = await Task.Run(() => Conexionn.firebase
+             .Child("Pokemon")
+            .AsObservable<Mpokemon>()
+            .AsObservableCollection());
+            return data;
+
         }
+
+
+        
+
+
+
     }
 }

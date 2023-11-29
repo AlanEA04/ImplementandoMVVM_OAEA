@@ -72,6 +72,13 @@ namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
             var parametros = new Mpokemon();
             parametros.ColorFondo= _Txtcolorfondo;
             parametros.Colorpoder= _Txtcolorpoder;
+            parametros.Icono= _Txticono;
+            parametros.Nombre= _Txtnombre;
+            parametros.NroOrden= _Txtnro;
+            parametros.Poder= _Txtpoder;
+
+            await funcion.Insertarpokemon(parametros);
+            await Volver();
         }
         public async Task Volver()
         {
@@ -83,6 +90,8 @@ namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
         }
         #endregion
         #region COMANDOS
+
+        public ICommand Insertarcomand => new Command(async () => await Insertar());
         public ICommand Volvercomand => new Command(async () => await Volver());
         public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
         #endregion

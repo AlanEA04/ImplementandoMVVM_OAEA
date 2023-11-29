@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using ImplementandoMVVM_OAEA.Vista.Pokemon;
-
+using ImplementandoMVVM_OAEA.Datos;
+using ImplementandoMVVM_OAEA.Modelo;
+using System.Collections.ObjectModel;
 
 namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
 {
@@ -13,31 +15,43 @@ namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
     {
        
             #region VARIABLES
-            string _Texto;
+           // string _Texto;
+             ObservableCollection<Mpokemon> _ListaPokemon;
             #endregion
             #region CONTRUCTOR
             public VMlistapokemoncs(INavigation navigation)
             {
                 Navigation = navigation;
+                Mostrarpokemon();
             }
 
             #endregion
             #region OBJETOS
-            public string Texto
+            public ObservableCollection<Mpokemon> ListaPokemon
             {
-                get { return _Texto; }
-                set { SetValue(ref _Texto, value); }
+                get { return _ListaPokemon; }
+                set { SetValue(ref _ListaPokemon, value);
+                OnpropertyChanged();
+            }
             }
             #endregion
             #region PROCESOS
+            
+            public async Task Mostrarpokemon()
+            {
+            var funcion = new Dpokemon();
+              ListaPokemon = await funcion.MostrarPokemon();
+            
+            }
+
 
             public async Task Iraregistro()
             {
-            await Navigation.PushAsync(new Registarpokemon());
+                await Navigation.PushAsync(new Registarpokemon());
 
             }
 
-        public void ProcesoSimple()
+             public void ProcesoSimple()
             {
 
 
