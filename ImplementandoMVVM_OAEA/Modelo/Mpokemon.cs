@@ -17,6 +17,7 @@ namespace ImplementandoMVVM_OAEA.Modelo
         public string Poder { get; set; }
         public string IdPokemon { get; set; }
 
+        public Guid IdPokemonId { get; set; }
 
 
     }

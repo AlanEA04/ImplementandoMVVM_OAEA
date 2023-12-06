@@ -16,7 +16,8 @@
         <CollectionView BackgroundColor="AntiqueWhite"
                         Grid.Row="1"
                         ItemsSource="{Binding ListaPokemon}"
-                        Margin="0,0,0,0">
+                        Margin="0,0,0,0"
+                        x:Name="lista">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical"
                                  Span="2"
@@ -29,31 +30,36 @@
                     <Grid RowDefinitions="100, *"
                      Margin="0,5,0,0">
                         <Frame Grid.Row="1" WidthRequest="250"
-           HorizontalOptions="Center"
-           CornerRadius="15"
-           Margin="15,-70,10,0"
-           BackgroundColor="{Binding ColorFondo}"
-                               HasShadow="True">
+                              HorizontalOptions="Center"
+                                 CornerRadius="15"
+                                    Margin="15,-70,10,0"
+                                        BackgroundColor="{Binding ColorFondo}"
+                                            HasShadow="True">
                             <StackLayout
-             Margin="0,20,0,0">
+                                Margin="0,20,0,0">
 
                                 <Label Text="{Binding NroOrden}"/>
                                 <Label Text="{Binding Nombre}"
-                   CharacterSpacing="1"
-                    FontSize="20"
-                   Margin="0,0,0,5"/>
+                                            CharacterSpacing="1"
+                                                FontSize="20"
+                                                  Margin="0,0,0,5"/>
                                 <Button Text="{Binding Poder}"
-                    CornerRadius="30"
-                    HorizontalOptions="Start"
-                    TextTransform="None"
-                    HeightRequest="40"
-                    BackgroundColor="{Binding Colorpoder}"/>
+                                    CornerRadius="30"
+                                       HorizontalOptions="Start"
+                                         TextTransform="None"
+                                         HeightRequest="40"
+                                     BackgroundColor="{Binding Colorpoder}"/>
                             </StackLayout>
                         </Frame>
                         <Image Source="{Binding Icono}"
-           Grid.RowSpan="2"
-           HeightRequest="90"
-           VerticalOptions="StartAndExpand"/>
+                                  Grid.RowSpan="2"
+                                 HeightRequest="90"
+                              VerticalOptions="StartAndExpand"
+                       />
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Iradetallecommand,Source={x:Reference lista}}" CommandParameter="{Binding .}"/>
+                           
+                        </Grid.GestureRecognizers>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

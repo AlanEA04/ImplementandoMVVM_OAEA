@@ -51,17 +51,17 @@ namespace ImplementandoMVVM_OAEA.VistaModelo.VMpokemon
 
             }
 
-             public void ProcesoSimple()
-            {
+             public async Task Iradetalle(Mpokemon parametros)
+             {
+                await Navigation.PushAsync(new DetallesPokemonxaml(parametros));
+             }
 
+        #endregion
+        #region COMANDOS
+        public ICommand Iraregistrocommand => new Command(async () => await Iraregistro());
 
-            }
-            #endregion
-            #region COMANDOS
-            public ICommand Iraregistrocommand => new Command(async () => await Iraregistro());
+        public ICommand Iradetallecommand => new Command<Mpokemon>(async (p) => await Iradetalle(p));
+        #endregion
 
-            public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
-            #endregion
-        
     }
 }
